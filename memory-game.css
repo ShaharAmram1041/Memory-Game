@@ -1,0 +1,262 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1 { color: #ffffff; 
+    font-family: 'Raleway',sans-serif;
+     font-size: 40px; 
+     font-weight: 800; 
+     margin: 0 0 24px; 
+     text-align: center; 
+    text-transform: uppercase; 
+}
+
+.container{
+    display: grid;
+    place-items:center;
+    min-height: 100vh;
+}
+
+.button-container {
+  align-items: center;
+  justify-content: space-around;
+  font-size: 2em;
+  display: grid;
+    place-items:center ;
+}
+
+
+
+
+
+.logo_image{
+    text-align: center;
+}
+
+.logo_container {
+    display: flex;
+    align-items: center;
+}
+
+#poke_img {
+    width: 200px;
+    height: 200px;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 2em;
+    visibility: hidden;
+    
+
+}
+.card{
+    height: 150px;
+    width: 150px;
+    background-color: black;
+    /* background-image: url('./pics/ball.jpg'); */
+    /* background-size: cover; */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s all ease;
+    
+     display: grid; 
+    place-items: center;
+    /*visibility: hidden;*/
+        /*display: none;*/
+
+}
+
+.card:hover{
+    transform: scale(1.13);
+}
+
+.card img{
+    width: 80%;
+    max-height: 90px;
+    transition: 0.3s all ease;
+    opacity: 0;
+}
+
+body{
+    margin:0;
+    background: linear-gradient(to right, #03001e, #7303c0,#ec38bc,#fdeff9);
+/* background:grad; */
+}
+
+.card.clicked{
+    background-color: grey;
+}
+
+.card.checked{
+    background-color: lightgrey;
+}
+.card.clicked img, .card.checked img{
+    opacity: 1;
+}
+.card.shake{
+    background-color: red;
+    animation: shake 0.5s;
+}
+
+.clicked{
+    pointer-events: none;
+}
+
+.newGame-button , .newGame1-button{
+    margin: 5px;
+    appearance: none;
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono",monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+    width: 200px;
+    text-align: center;
+    align-items: center;
+
+  
+  }
+  
+  .newGame-button:focus, .newGame1-button:focus {
+      box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+    }
+    
+    .newGame-button:hover, .newGame1-button:hover {
+      box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+      transform: translateY(-2px);
+    }
+    
+    .newGame-button:active, .newGame1-button:active {
+      box-shadow: #3c4fe0 0 3px 7px inset;
+      transform: translateY(2px);
+    } 
+    
+    
+ .message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 50px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  animation: pop-up 0.3s ease-in-out forwards;
+  opacity: 0;
+  font-family: 'Allan';
+  font-size: 25px;
+
+  
+}
+
+ .message1 {
+  position: fixed;
+  top: 50%;
+  left: 120%; /* changed from calc(100% - 257px) */
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  animation: slide-in 0.3s ease-in-out forwards;
+  opacity: 0;
+  font-family: 'Allan';
+  font-size: 22px;
+  text-align: center;
+  overflow: auto;
+  word-wrap: break-word;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    left: 120%; /* same as initial value of left */
+  }
+  to {
+    opacity: 1;
+    left: 85%;
+  }
+}
+
+
+
+
+
+
+
+
+.successMes {
+  position: fixed;
+  top: 88%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 50px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  animation: pop-up 0.3s ease-in-out forwards;
+  opacity: 1;
+  font-family: 'Allan';
+  font-size: 25px;
+}
+
+@keyframes pop-up {
+  from {
+    transform: translate(-50%, -150%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+.message__close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 50px;
+  cursor: pointer;
+  font-size: 3em;
+  font-family: 'Allan';
+}
+
+p{
+  font-family: 'Allan';
+  font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
